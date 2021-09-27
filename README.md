@@ -10,7 +10,7 @@
 ## Prerequisites
  - [Java SDK]() installed and configured correctly.
  - [Nodejs & npm](https://nodejs.org/en/) installed on your machine.
- - 
+ - Npm package [@vue/cli](https://npmjs.org/package/vue) globally installed
 
 
 ## Installation
