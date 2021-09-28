@@ -27,4 +27,12 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private User user;
+
 }
