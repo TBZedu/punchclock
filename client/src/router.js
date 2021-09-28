@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import securityService from './services/security'
+
 import Home from '../views/Home.vue'
 
 const routes = [
@@ -23,5 +25,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+router.beforeEach(securityService)
 
 export default router
