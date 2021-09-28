@@ -24,7 +24,7 @@ public class User  {
     private boolean isAdmin;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "team_id")
     private Team team;
 
     @OneToMany(mappedBy = "user")
