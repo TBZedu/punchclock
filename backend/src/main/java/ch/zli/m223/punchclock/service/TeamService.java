@@ -1,8 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
-import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.domain.Team;
-import ch.zli.m223.punchclock.repository.CategoryRepository;
 import ch.zli.m223.punchclock.repository.TeamRepository;
 
 import java.util.List;
