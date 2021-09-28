@@ -1,4 +1,19 @@
 package ch.zli.m223.punchclock.domain;
 
-public class User {
+import javax.persistence.*;
+
+@Entity
+@Data
+public class User  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    private String username;
+
+    @Column
+    private String password;
+
 }
