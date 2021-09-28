@@ -2,9 +2,11 @@ package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Team;
 import ch.zli.m223.punchclock.repository.TeamRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TeamService {
     private TeamRepository teamRepository;
 
@@ -16,7 +18,7 @@ public class TeamService {
         return teamRepository.saveAndFlush(team);
     }
 
-    public List<Team> findTeam() {
+    public List<Team> findAll() {
         return teamRepository.findAll();
     }
 
