@@ -2,7 +2,12 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    currentUser: null,
 
+    categories: [],
+    entries: [],
+    teams: [],
+    users: []
   },
   mutations: {
 
