@@ -47,10 +47,11 @@ body {
 }
 .button {
   border: 0;
-  padding: 5px;
+  padding: 7px;
   margin: 0 2px;
 }
 .button.--action-edit {
+  color: #fff;
   background-color: #534666;
 }
 .button.--action-login {
