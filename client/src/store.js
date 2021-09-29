@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import api from '@/services/api'
 
 export default createStore({
   state: {
@@ -10,6 +11,12 @@ export default createStore({
     users: []
   },
   mutations: {
+    SET_CURRENT_USER(state, user) {
+      this.currentUser = user;
+    },
+    SET_ENTRIES(state, entries) {
+      state.entries = entries;
+    }
 
   },
   actions: {
@@ -39,11 +46,14 @@ export default createStore({
     },
 
 
+
+
+
     /**
      * Fetch all entries of a user
      */
     fetchEntries(context) {
-
+      api.get('/entries').then( entries => context.commit('SET_ENTRIES', entries)) 
     },
 
 
