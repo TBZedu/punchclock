@@ -16,7 +16,15 @@
 ## Installation
 
 ### REST API
-Wowowowowowowowowowow
+Check following things before starting to work:
+1. Check, if JDK 12 is installed and the env variable `path` is set.
+1. Run the backend app with `./gradlew bootRun` or `./gradlew.bat bootRun`.
+1. Run unit tests with `./gradlew test` or `./gradlew.bat test`.
+1. Build the jar file with `./gradlew bootJar` or `./gradlew.bat bootJar`.
+
+Following services are available when using the `dev` profile:
+- REST-API: http://localhost:8081
+- H2 database dashboard: http://localhost:8081/h2-console
 
 
 ### Web Client
