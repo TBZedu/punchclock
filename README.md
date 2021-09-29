@@ -26,6 +26,9 @@ Following services are available when using the `dev` profile:
 - REST-API: http://localhost:8081
 - H2 database dashboard: http://localhost:8081/h2-console
 
+#### Test data
+If you wish to use test data, make request PUT /testing
+
 
 ### Web Client
 `npm install`
@@ -38,4 +41,4 @@ The dev server is configured to proxy all requests from http://localhost:8080/ap
 #### Build for production
 `npm run build`
 
-Note: To log in, use credentials `clientside:clientside` formatted as username:password. This will create a local user which will have access to the GUI. If I manage to implement Auth in the backend tho, the entries won't load. Otherwise you can use the panel like this.
+Note: To log in, use credentials `clientside:clientside` formatted as username:password. This will create a local user which will have access to the GUI. If I manage to implement Auth in the backend tho, the entries won't load. Otherwise you can use the panel like this. (Registration works tho ^-^)
