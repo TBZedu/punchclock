@@ -6,6 +6,9 @@ import Entries from '@/views/Entries.vue'
 import Teams from '@/views/Teams.vue'
 import Users from '@/views/Users.vue'
 
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+
 const routes = [
   {
     path: '/',
@@ -36,20 +39,17 @@ const routes = [
     meta: {
       authRequired: 'admin'
     }
-  },{
+  }
+  
+  
+  ,{
     path: '/login',
     name: 'Login',
-    component: Categories,
-    meta: {
-      authRequired: 'admin'
-    }
+    component: Login,
   },{
     path: '/register',
     name: 'Register',
-    component: Categories,
-    meta: {
-      authRequired: 'admin'
-    }
+    component: Register,
   }
 ]
 
