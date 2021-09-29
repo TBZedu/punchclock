@@ -1,5 +1,7 @@
 import { createStore } from 'vuex'
 import api from '@/services/api'
+import { saveToken } from './services/token';
+import router from '@/router';
 
 export default createStore({
   state: {
@@ -47,7 +49,9 @@ export default createStore({
      * @param {Object} details this is an object containing a username, password and name for the new user.
      */
      registerUser(context, details) {
-
+      api.post('/users', details).then( res => {
+        router.push('/login')
+      })
     },
 
 
@@ -56,7 +60,9 @@ export default createStore({
      * @param {Object} credentials this is an object containing a username and a password.
      */
     loginUser(context, credentials) {
-
+      api.post('/login', credentials).then( res => {
+        saveToken(res.headers.authorization)
+      })
     },
 
 
@@ -64,7 +70,7 @@ export default createStore({
 
 
     /**
-     * Fetch all entries of a user
+     * Fetch all entries of the user
      */
     fetchEntries(context) {
       api.get('/entries').then( res => context.commit('SET_ENTRIES', res.data));
@@ -72,7 +78,7 @@ export default createStore({
 
 
     /**
-     * Create a new entry 
+     * Create a new entry for the user
      * @param {Object} entry this is an object containing a checkIn and checkOut date.
      */
     createEntry(context, entry) {
@@ -81,7 +87,7 @@ export default createStore({
 
 
     /**
-     * Patch an existing entry
+     * Patch an existing entry for the user
      * @param {Object} newEntry the new data of an entry.
      */
     updateEntry(context, newEntry) {
@@ -90,7 +96,7 @@ export default createStore({
 
     
     /**
-     * Delete an existing entry.
+     * Delete an existing entry
      * @param {String} entryId the id of the entry.
      */
     deleteEntry(context, entryId) {
@@ -102,7 +108,7 @@ export default createStore({
 
 
     /**
-     * Fetch all entries of a user
+     * Fetch all users for the admin view
      */
      fetchUsers(context) {
 
@@ -110,19 +116,19 @@ export default createStore({
 
 
     /**
-     * Patch an existing entry
-     * @param {Object} newEntry the new data of an entry.
+     * Patch an existing user in the admin view
+     * @param {Object} newUser the new data of an entry.
      */
-     updateUser(context, newEntry) {
+     updateUser(context, newUser) {
 
     },
 
     
     /**
-     * Delete an existing entry.
-     * @param {String} entryId the id of the entry.
+     * Delete an existing user in the admin view
+     * @param {String} userId the id of the entry.
      */
-    deleteUser(context, entryId) {
+    deleteUser(context, userId) {
 
     },
 
@@ -131,7 +137,7 @@ export default createStore({
 
 
     /**
-     * Fetch all entries of a user
+     * Fetch all teams for the admin view
      */
      fetchTeams(context) {
 
@@ -139,19 +145,19 @@ export default createStore({
 
 
     /**
-     * Patch an existing entry
-     * @param {Object} newEntry the new data of an entry.
+     * Patch an existing team in the admin view
+     * @param {Object} newTeam the new data of an entry.
      */
-     updateTeam(context, newEntry) {
+     updateTeam(context, newTeam) {
 
     },
 
     
     /**
-     * Delete an existing entry.
-     * @param {String} entryId the id of the entry.
+     * Delete an existing team in the admin view
+     * @param {String} teamId the id of the entry.
      */
-    deleteTeam(context, entryId) {
+    deleteTeam(context, teamId) {
 
     },
 
@@ -160,7 +166,7 @@ export default createStore({
 
 
     /**
-     * Fetch all entries of a user
+     * Fetch all categories for the admin view
      */
      fetchCategories(context) {
 
@@ -168,19 +174,19 @@ export default createStore({
 
 
     /**
-     * Patch an existing entry
-     * @param {Object} newEntry the new data of an entry.
+     * Patch an existing category in the admin view
+     * @param {Object} newCategory the new data of an entry.
      */
-     updateCategory(context, newEntry) {
+     updateCategory(context, newCategory) {
 
     },
 
     
     /**
-     * Delete an existing entry.
-     * @param {String} entryId the id of the entry.
+     * Delete an existing category in the admin view
+     * @param {String} categoryId the id of the entry.
      */
-    deleteCategory(context, entryId) {
+    deleteCategory(context, categoryId) {
 
     },
   },
