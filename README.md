@@ -2,7 +2,7 @@
 <div>
   <h3 align="center">Punchclock</h3>
   <p align="center">Punchclock is a system that allows users to create and manage time period logs. The system also includes an administrator dashboard to manager users and configurations</p>
-  <a href="https://github.com/GeneTv/punchclock" class="center">Click to open the repository</a>
+  <p align="center"><a href="https://github.com/GeneTv/punchclock">Click to open the repository</a></p>
 </div>
 
 [![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
