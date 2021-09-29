@@ -9,20 +9,22 @@ import Users from '@/views/Users.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Entries',
     component: Entries,
     meta: {
-      authRequired: 'user'
+      authRequired: 'user',
+      inNav: true
     }
   },{
     path: '/admin/users',
     name: 'Users',
     component: Users,
     meta: {
-      authRequired: 'admin'
+      authRequired: 'admin',
+      inNav: true
     }
   },
   {
@@ -30,14 +32,16 @@ const routes = [
     name: 'Teams',
     component: Teams,
     meta: {
-      authRequired: 'admin'
+      authRequired: 'admin',
+      inNav: true
     }
   },{
     path: '/admin/categories',
     name: 'Categories',
     component: Categories,
     meta: {
-      authRequired: 'admin'
+      authRequired: 'admin',
+      inNav: true
     }
   },
   
@@ -45,10 +49,26 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+    meta: {
+      authRequired: 'guest',
+      inNav: true
+    }
   },{
     path: '/register',
     name: 'Register',
     component: Register,
+    meta: {
+      authRequired: 'guest',
+      inNav: true
+    }
+  },{
+    path: '/logout',
+    name: 'Logout',
+    redirect: '/',
+    meta: {
+      authRequired: 'user',
+      inNav: true
+    }
   }
 ]
 
