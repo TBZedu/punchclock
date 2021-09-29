@@ -82,7 +82,9 @@ export default createStore({
      * @param {Object} entry this is an object containing a checkIn and checkOut date.
      */
     createEntry(context, entry) {
-      console.log('Creating entry:', entry)
+      api.post('/entries', entry).then( res => {
+        context.commit('CREATE_ENTRY', res.data)
+      })
     },
 
 
@@ -91,7 +93,8 @@ export default createStore({
      * @param {Object} newEntry the new data of an entry.
      */
     updateEntry(context, newEntry) {
-      console.log('Updating entry:', newEntry)
+      api.put(`/entries/${newEntry.id}`, newEntry)
+      context.commit('UPDATE_ENTRY', newEntry)
     },
 
     
