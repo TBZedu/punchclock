@@ -27,7 +27,7 @@ Following services are available when using the `dev` profile:
 - H2 database dashboard: http://localhost:8081/h2-console
 
 #### Test data
-If you wish to use test data, make request PUT /testing
+If you wish to use test data, make request: `PUT /testing`
 
 
 ### Web Client
