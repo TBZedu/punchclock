@@ -5,9 +5,7 @@ import router from '@/router';
 
 export default createStore({
   state: {
-    currentUser: {
-      isAdmin: true
-    },
+    currentUser: null,
 
     categories: [],
     entries: [],
