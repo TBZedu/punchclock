@@ -14,7 +14,7 @@ export default createStore({
   },
   mutations: {
     SET_CURRENT_USER(state, user) {
-      this.currentUser = user;
+      state.currentUser = user;
     },
 
     SET_ENTRIES(state, entries) {

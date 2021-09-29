@@ -7,6 +7,7 @@ import Teams from '@/views/Teams.vue'
 import Users from '@/views/Users.vue'
 
 import Login from '@/views/Login.vue'
+import Logout from '@/views/Logout.vue'
 import Register from '@/views/Register.vue'
 
 export const routes = [
@@ -64,7 +65,7 @@ export const routes = [
   },{
     path: '/logout',
     name: 'Logout',
-    redirect: '/',
+    component: Logout,
     meta: {
       authRequired: 'user',
       inNav: true
