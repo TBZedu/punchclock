@@ -33,5 +33,9 @@ Following services are available when using the `dev` profile:
 #### Start development server
 `npm run serve`
 
+The dev server is configured to proxy all requests from http://localhost:8080/api/$0 -> http://localhost:8081/$0. This will help to bypass cors restriction during development.
+
 #### Build for production
 `npm run build`
+
+Note: To log in, use credentials `clientside:clientside` formatted as username:password. This will create a local user which will have access to the GUI. If I manage to implement Auth in the backend tho, the entries won't load. Otherwise you can use the panel like this.
