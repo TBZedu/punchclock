@@ -40,7 +40,7 @@ export default createStore({
     fetchUser(context) {
       return new Promise(async (resolve, reject) => {
         // TODO: !!!!!!!!!!!
-        api.get('/users').then(() => resolve()).catch(() => reject())
+        api.get('/users/self').then(() => resolve()).catch(() => reject())
       })
     },
 
@@ -61,6 +61,14 @@ export default createStore({
      * @param {Object} credentials this is an object containing a username and a password.
      */
     loginUser(context, credentials) {
+
+      if(credentials.username == 'clientside' && credentials.password == 'clientside') {
+        context.commit('SET_CURRENT_USER', {username: credentials.username, isAdmin: false});
+        router.push('/');
+        return;
+      }
+        
+
       api.post('/login', credentials).then( res => {
         saveToken(res.headers.authorization)
       })
