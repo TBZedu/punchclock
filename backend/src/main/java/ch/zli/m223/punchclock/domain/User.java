@@ -17,6 +17,10 @@ public class User  {
     @Column
     private String username;
 
+    /**
+     * Currently the password is stored in plain text.
+     * "It's not a security issue, it's a feature." - Me 2021
+     */
     @Column
     private String password;
 
