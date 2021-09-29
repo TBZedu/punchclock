@@ -25,14 +25,15 @@
 
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <hr>
+        <span class="close" @click="closeModal()">&times;</span>
         <form action="" @submit.prevent="createEntry">
+          <label for="">Check-in</label>
           <div>
             <input type="date" v-model="modalData.checkInDate">
             <input type="time" v-model="modalData.checkInTime">
           </div>
 
+          <label for="">Check-out</label>
           <div>
             <input type="date" v-model="modalData.checkOutDate">
             <input type="time" v-model="modalData.checkOutTime">
@@ -90,7 +91,7 @@ export default {
       } else {
         this.$store.dispatch('createEntry', entry);
       }
-      this.modalActive = false;
+      this.closeModal();
     },
     openEditMode(entry = {
       id: null,
@@ -100,8 +101,7 @@ export default {
       checkOutDate: null,
       checkOutTime: null
     }) {
-      this.modalActive = forceOpen || !this.modalActive;
-      if(!this.modalActive) return;
+      this.modalActive = true;
 
       if(entry.id != null) {
         let checkIn = entry.checkIn.split('T');
@@ -118,6 +118,9 @@ export default {
       }
 
       this.modalData = entry;
+    },
+    closeModal() {
+      this.modalActive = false;
     }
   },
   mounted() {

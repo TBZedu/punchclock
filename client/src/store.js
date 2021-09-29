@@ -82,7 +82,7 @@ export default createStore({
      * @param {Object} entry this is an object containing a checkIn and checkOut date.
      */
     createEntry(context, entry) {
-
+      console.log('Creating entry:', entry)
     },
 
 
@@ -91,7 +91,7 @@ export default createStore({
      * @param {Object} newEntry the new data of an entry.
      */
     updateEntry(context, newEntry) {
-
+      console.log('Updating entry:', newEntry)
     },
 
     
