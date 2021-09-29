@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.service.EntryService;
 import ch.zli.m223.punchclock.service.UserService;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
