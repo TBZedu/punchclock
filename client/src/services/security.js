@@ -1,6 +1,5 @@
 import store from '@/store'
 import { destroyToken } from '@/services/token'
-import { getToken } from './token';
 
 export default async (to, from, next) => {
 
@@ -12,13 +11,15 @@ export default async (to, from, next) => {
 
   if (to.matched.some(record => record.meta.authRequired.length !== 0)) {
 
-    if(!store.getters.isLoggedIn()) {
+    if(!store.getters.isLoggedIn && to.meta.authRequired != 'guest') {
 
-      return await store.dispacth('fetchUser').then(
+      // Note to self, check spelling instead of trying to find out why something isn't working, if you are sure a function exists to 1000000%
+      await store.dispatch('fetchUser').then(
         () => next()
       ).catch(
         () => next({ path: '/login', query: { redirect: to.fullPath } })
       );
+      return;
     }
 
     // User is logged in, check if role has access
