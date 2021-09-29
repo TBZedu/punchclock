@@ -39,10 +39,9 @@ const routes = [
     meta: {
       authRequired: 'admin'
     }
-  }
+  },
   
-  
-  ,{
+  {
     path: '/login',
     name: 'Login',
     component: Login,
