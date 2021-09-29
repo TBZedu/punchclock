@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <form action="" class="form-login" @submit.prevent="login()">
+      <h3>Punch Clock - Login</h3>
       <div class="form-login__group">
         <label for="">Username</label>
         <input type="text" v-model="username">
@@ -23,7 +24,13 @@ export default {
   }),
   methods: {
     login() {
-      console.log(this.username, this.password)
+      let username = this.username;
+      let password = this.password;
+
+      if(username.replaceAll(' ', '').length == 0) return;
+      if(password.replaceAll(' ', '').length == 0) return;
+
+      this.$store.dispatch('loginUser', {username, password});
     }
   }
 }
