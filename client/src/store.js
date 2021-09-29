@@ -40,7 +40,7 @@ export default createStore({
     fetchUser(context) {
       return new Promise(async (resolve, reject) => {
         // TODO: !!!!!!!!!!!
-        api.get('/users').then(resolve()).catch(reject())
+        api.get('/userss').then(() => resolve()).catch(() => reject())
       })
     },
 

@@ -14,12 +14,12 @@ export default async (to, from, next) => {
     if(!store.getters.isLoggedIn && to.meta.authRequired != 'guest') {
 
       // Note to self, check spelling instead of trying to find out why something isn't working, if you are sure a function exists to 1000000%
-      await store.dispatch('fetchUser').then(
-        () => next()
-      ).catch(
-        () => next({ path: '/login', query: { redirect: to.fullPath } })
-      );
-      return;
+      try {
+        await store.dispatch('fetchUser');
+      } catch {
+        return next({ path: '/login', query: { redirect: to.fullPath } })
+      }
+      return next();
     }
 
     // User is logged in, check if role has access
