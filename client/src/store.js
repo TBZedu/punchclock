@@ -6,7 +6,7 @@ import router from '@/router';
 export default createStore({
   state: {
     currentUser: {
-      isAdmin: false
+      isAdmin: true
     },
 
     categories: [],
@@ -40,7 +40,10 @@ export default createStore({
      * Fetch the user's details.
      */
     fetchUser(context) {
-      
+      return new Promise(async (resolve, reject) => {
+        // TODO: !!!!!!!!!!!
+        api.get('/users').then(resolve()).catch(reject())
+      })
     },
 
 
