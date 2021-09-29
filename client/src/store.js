@@ -71,9 +71,96 @@ export default createStore({
      */
     deleteEntry(context, entryId) {
 
-    }
+    },
+
+
+
+
+
+    /**
+     * Fetch all entries of a user
+     */
+     fetchUsers(context) {
+
+    },
+
+
+    /**
+     * Patch an existing entry
+     * @param {Object} newEntry the new data of an entry.
+     */
+     updateUser(context, newEntry) {
+
+    },
+
+    
+    /**
+     * Delete an existing entry.
+     * @param {String} entryId the id of the entry.
+     */
+    deleteUser(context, entryId) {
+
+    },
+
+    
+
+
+
+    /**
+     * Fetch all entries of a user
+     */
+     fetchTeams(context) {
+
+    },
+
+
+    /**
+     * Patch an existing entry
+     * @param {Object} newEntry the new data of an entry.
+     */
+     updateTeam(context, newEntry) {
+
+    },
+
+    
+    /**
+     * Delete an existing entry.
+     * @param {String} entryId the id of the entry.
+     */
+    deleteTeam(context, entryId) {
+
+    },
+
+
+
+
+
+    /**
+     * Fetch all entries of a user
+     */
+     fetchCategories(context) {
+
+    },
+
+
+    /**
+     * Patch an existing entry
+     * @param {Object} newEntry the new data of an entry.
+     */
+     updateCategory(context, newEntry) {
+
+    },
+
+    
+    /**
+     * Delete an existing entry.
+     * @param {String} entryId the id of the entry.
+     */
+    deleteCategory(context, entryId) {
+
+    },
   },
   getters: {
-
+    isLoggedIn: state => state.user != null
   }
 })
