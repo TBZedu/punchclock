@@ -3,7 +3,9 @@ import api from '@/services/api'
 
 export default createStore({
   state: {
-    currentUser: null,
+    currentUser: {
+      isAdmin: false
+    },
 
     categories: [],
     entries: [],
@@ -183,6 +185,14 @@ export default createStore({
     },
   },
   getters: {
-    isLoggedIn: state => state.user != null
+    isLoggedIn: state => state.currentUser != null,
+    userRole: state => {
+      const user = state.currentUser;
+      if(user == null) return ['guest'];
+
+      let roles = ['user'];
+      if(user.isAdmin) roles.push('admin');
+      return roles;
+    }
   }
 })
