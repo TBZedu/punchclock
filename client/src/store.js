@@ -14,14 +14,20 @@ export default createStore({
     SET_CURRENT_USER(state, user) {
       this.currentUser = user;
     },
+
     SET_ENTRIES(state, entries) {
       state.entries = entries;
     },
     DELETE_ENTRY(state, entryId) {
-      state.entries = state.entries.filter(entry => entry.id !== entryId)
+      state.entries = state.entries.filter(entry => entry.id !== entryId);
     },
     CREATE_ENTRY(state, entry) {
-      state.entries.push(entry)
+      state.entries.push(entry);
+    },
+    UPDATE_ENTRY(state, newEntry) {
+      let oldEntry = state.entries.find(entry => entry.id == newEntry.id);
+      oldEntry.checkIn = newEntry.checkIn;
+      oldEntry.checkOut = newEntry.checkOut;
     }
 
   },
