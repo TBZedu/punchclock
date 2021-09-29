@@ -3,6 +3,8 @@
   <h3 align="center">Punchclock</h3>
   <p align="center">Punchclock is a system that allows users to create and manage time period logs. The system also includes an administrator dashboard to manager users and configurations</p>
 </div>
+
+[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
  
 
 # Setup Development Environment
