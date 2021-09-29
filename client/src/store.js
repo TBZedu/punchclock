@@ -16,6 +16,12 @@ export default createStore({
     },
     SET_ENTRIES(state, entries) {
       state.entries = entries;
+    },
+    DELETE_ENTRY(state, entryId) {
+      state.entries = state.entries.filter(entry => entry.id !== entryId)
+    },
+    CREATE_ENTRY(state, entry) {
+      state.entries.push(entry)
     }
 
   },
@@ -53,7 +59,7 @@ export default createStore({
      * Fetch all entries of a user
      */
     fetchEntries(context) {
-      api.get('/entries').then( entries => context.commit('SET_ENTRIES', entries)) 
+      api.get('/entries').then( res => context.commit('SET_ENTRIES', res.data));
     },
 
 
@@ -80,7 +86,7 @@ export default createStore({
      * @param {String} entryId the id of the entry.
      */
     deleteEntry(context, entryId) {
-
+      api.delete(`/entries/${entryId}`).then( () => context.commit('DELETE_ENTRY', entryId));
     },
 
 
