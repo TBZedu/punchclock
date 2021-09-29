@@ -13,7 +13,7 @@ export default {
   computed: {
     items() {
       const userRole = this.$store.getters.userRole;
-      let routeItems = routes.filter( route => route.meta.inNav && route.meta.authRequired.length == 0 ? true : route.meta.authRequired.includes(userRole));
+      let routeItems = routes.filter( route => route.meta.inNav && route.meta.authRequired.length == 0 ? true : userRole.includes(route.meta.authRequired));
 
       const currentRoute = this.$route;
 
