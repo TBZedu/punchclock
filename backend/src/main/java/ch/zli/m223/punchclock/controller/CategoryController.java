@@ -19,6 +19,10 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+    /**
+     * The description of the services is described in the specific method name :)
+     */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Category> getAllCategories() {

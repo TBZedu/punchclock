@@ -17,6 +17,10 @@ public class TeamController {
         this.teamService = teamService;
     }
 
+    /**
+     * The description of the services is described in the specific method name :)
+     */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Team> getAllTeams() {

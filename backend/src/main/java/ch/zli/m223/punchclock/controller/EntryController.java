@@ -17,6 +17,10 @@ public class EntryController {
         this.entryService = entryService;
     }
 
+    /**
+     * The description of the services is described in the specific method name :)
+     */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Entry> getAllEntries() {

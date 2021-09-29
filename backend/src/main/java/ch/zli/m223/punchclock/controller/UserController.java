@@ -20,6 +20,10 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * The description of the services is described in the specific method name :)
+     */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<User> getAllUsers() {
