@@ -65,7 +65,7 @@ export const routes = [
   },{
     path: '/logout',
     name: 'Logout',
-    component: Logout,
+    redirect: Logout,
     meta: {
       authRequired: 'user',
       inNav: true

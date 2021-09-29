@@ -6,9 +6,7 @@ export default (to, from, next) => {
   if(to.path == '/logout') {
     destroyToken();
     store.commit('SET_CURRENT_USER', null);
-
-    console.log('State', store.state)
-    return next('/login');
+    return next('/login')
   }
   next()
 }
